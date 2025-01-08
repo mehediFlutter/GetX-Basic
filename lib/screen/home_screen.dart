@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_basic/re_usable_base_screen.dart';
+import 'package:getx_basic/screen/counter_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Get.to();
+                  Get.to(CounterScreen());
                 },
                 child: const Text("Let's Count Using GetX"),
               ),
