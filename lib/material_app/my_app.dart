@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getx_basic/screen/home_screen.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -12,7 +13,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Basic GetX",
-      home: 
+      home: HomeScreen(),
     );
   }
 }
