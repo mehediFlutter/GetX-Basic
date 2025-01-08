@@ -27,6 +27,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: const Text("Let's Count Using GetX"),
               ),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed('/container_opacity_screen');
+                  }, child: Text("Let's Slide with GetX"))
             ],
           ),
         ),
