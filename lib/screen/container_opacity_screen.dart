@@ -1,5 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getx_basic/re_usable_base_screen.dart';
+
+import '../getX_controller/opacity_controller.dart';
 
 class ContainerOpacityScreen extends StatefulWidget {
   const ContainerOpacityScreen({super.key});
@@ -9,17 +13,30 @@ class ContainerOpacityScreen extends StatefulWidget {
 }
 
 class _ContainerOpacityScreenState extends State<ContainerOpacityScreen> {
-  double opacity = .4;
+  OpacityController opacityController = Get.put(OpacityController());
+
   @override
   Widget build(BuildContext context) {
-    return ReUsableBaseScreen(child: Scaffold(
+    print("Is builld");
+    return ReUsableBaseScreen(
+        child: Scaffold(
       body: Column(
         children: [
-          Container(
-            height: 200,
-            width: 200,
-            color: Colors.red.withOpacity(opacity),
-          )
+          Obx(() {
+            return Container(
+              height: 200,
+              width: 200,
+              color:
+                  Colors.red.withValues(alpha: opacityController.opacity.value),
+            );
+          }),
+          Obx(() {
+            return Slider(
+                value: opacityController.opacity.value,
+                onChanged: (value) {
+                  opacityController.updateOpacity(value);
+                });
+          })
         ],
       ),
     ));
