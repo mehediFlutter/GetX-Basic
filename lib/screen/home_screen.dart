@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Get.to(CounterScreen());
+                  Get.toNamed('/counter_screen');
                 },
                 child: const Text("Let's Count Using GetX"),
               ),

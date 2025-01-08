@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getx_basic/re_usable_base_screen.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -10,6 +11,8 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ReUsableBaseScreen(child: Scaffold(
+      body: Center(child: Text("Counter Screen"),),
+    ));
   }
 }
